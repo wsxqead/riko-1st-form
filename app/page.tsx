@@ -18,10 +18,10 @@ export default function Home() {
         <IntroSection />
 
         <section className="space-y-12">
+          <ProfileSection />
           <FirstMeetSection />
           <SpecialMomentSection />
           <MessageToRikoSection />
-          <ProfileSection />
           <SpecialIdeasSection />
           <SubmitButton />
         </section>

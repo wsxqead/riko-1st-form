@@ -17,6 +17,23 @@ export default function ProfileSection() {
         👤 나의 간단한 프로필
       </h2>
 
+      {/* 🌟 닉네임 입력란 */}
+      <div className="space-y-2">
+        <label className="block font-semibold text-gray-800 mb-1">
+          🌟 닉네임 (선택)
+        </label>
+        <input
+          type="text"
+          value={profile.nickname ?? ""}
+          onChange={(e) => setField("profile", { nickname: e.target.value })}
+          className="w-full p-3 border border-gray-300 rounded-lg"
+          placeholder="닉네임을 입력해주세요 (선택사항)"
+        />
+        <p className="text-xs text-gray-500 mt-1">
+          입력하지 않으면 &quot;익명의 치코 + 랜덤번호&quot;로 기록됩니다.
+        </p>
+      </div>
+
       {/* 🗺️ 지역 */}
       <div className="space-y-2">
         <label className="block font-semibold text-gray-800">
@@ -119,13 +136,13 @@ export default function ProfileSection() {
           🫶 내가 리코님의 팬이라는 걸 실감했던 순간
         </label>
         <textarea
-          value={profile.turningPoint}
+          value={profile.turningPoint ?? ""}
           onChange={(e) =>
             setField("profile", { turningPoint: e.target.value })
           }
           rows={4}
           className="w-full border p-3 rounded-lg"
-          placeholder="예: 리코가 내 채팅을 읽어줬을 때, 직접 그린 팬아트를 소개해줬을 때 등"
+          placeholder="예: 리코가 내 채팅을 읽어줬을 때, 팬아트를 소개해줬을 때 등"
         />
       </div>
     </section>

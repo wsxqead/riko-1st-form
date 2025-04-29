@@ -58,15 +58,6 @@ export default function MessageToRikoSection() {
           className="w-full p-3 border rounded-lg bg-gray-50 border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#A6D0A6]"
           placeholder="리코에게 전하고 싶은 진심을 담아 자유롭게 작성해주세요."
         />
-        <input
-          type="text"
-          value={messageToRiko.nickname ?? ""}
-          onChange={(e) =>
-            setField("messageToRiko", { nickname: e.target.value })
-          }
-          className="w-full mt-2 p-3 border rounded-lg bg-gray-50 border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#A6D0A6]"
-          placeholder="닉네임 (선택)"
-        />
       </div>
 
       {/* 🎨 팬아트 제출 */}

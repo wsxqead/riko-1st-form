@@ -20,12 +20,12 @@ type SpecialMoment = {
 type MessageToRiko = {
   funEpisode: string;
   letter: string;
-  nickname?: string;
   fanartFile?: File | null;
   fanartMessage: string;
 };
 
 type Profile = {
+  nickname?: string;
   region: string;
   age?: string;
   gender?: string;
@@ -69,11 +69,11 @@ export const useSurveyStore = create<SurveyState>((set) => ({
   messageToRiko: {
     funEpisode: "",
     letter: "",
-    nickname: "",
     fanartFile: null,
     fanartMessage: "",
   },
   profile: {
+    nickname: "",
     region: "",
     age: "",
     gender: "",

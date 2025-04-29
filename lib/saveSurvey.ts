@@ -4,6 +4,12 @@ import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useSurveyStore } from "@/store/useSurveyStore";
 
+// 랜덤 닉네임 생성 함수
+function generateRandomNickname() {
+  const randomNumber = Math.floor(10000 + Math.random() * 90000); // 5자리
+  return `익명의 치코${randomNumber}`;
+}
+
 export async function saveSurvey() {
   const {
     firstImpression,
@@ -26,6 +32,12 @@ export async function saveSurvey() {
       fanartUrl = await getDownloadURL(storageRef);
     }
 
+    // 🌟 닉네임 처리
+    const finalNickname =
+      profile.nickname && profile.nickname.trim() !== ""
+        ? profile.nickname.trim()
+        : generateRandomNickname();
+
     const docRef = await addDoc(collection(db, "surveyResponses"), {
       createdAt: Timestamp.now(),
       firstImpression,
@@ -35,7 +47,10 @@ export async function saveSurvey() {
         fanartFile: undefined, // 파일은 storage로 빼고
         fanartUrl,
       },
-      profile,
+      profile: {
+        ...profile,
+        nickname: finalNickname,
+      },
       specialIdeas,
     });
 

@@ -1,21 +1,35 @@
+"use client";
+
+import Link from "next/link";
+
 export default function ThanksPage() {
   return (
     <>
-      <main className="min-h-screen flex flex-col items-center justify-center px-6 py-24 bg-white text-gray-800">
+      <main className="min-h-screen flex flex-col items-center justify-center px-6 py-24 bg-white text-gray-800 animate-fade-in">
         <div className="max-w-xl text-center space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold text-[#A6D0A6]">
-            💌 감사합니다!
+            🎉 감사합니다! 🎉
           </h1>
-          <p className="text-lg md:text-xl text-gray-600">
-            여러분의 소중한 메시지가 리코에게 전해질 예정이에요.
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+            여러분의 소중한 마음이 리코에게 따뜻하게 전달될 예정입니다.
             <br className="hidden sm:block" />
-            리코의 1주년을 함께해주셔서 진심으로 감사드립니다!
+            함께해주셔서 진심으로 감사드려요! 💙
           </p>
           <p className="text-sm text-gray-400">
-            이 페이지는 자동으로 생성된 응답 확인 기능은 없으며,
+            * 본 설문은 자동 응답 확인 기능은 없으며,
             <br className="sm:hidden" />
-            수집된 메시지는 1주년 기념 홈페이지에 반영될 예정입니다.
+            수집된 메시지는 1주년 기념 홈페이지에 소중히 반영될 예정입니다.
           </p>
+
+          {/* 🔥 수정: a 대신 Link */}
+          <div className="mt-8">
+            <Link
+              href="/"
+              className="inline-block bg-[#A6D0A6] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#8FBF8F] transition"
+            >
+              🔙 홈으로 돌아가기
+            </Link>
+          </div>
         </div>
       </main>
 
